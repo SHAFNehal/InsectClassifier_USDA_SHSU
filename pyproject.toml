@@ -1,0 +1,25 @@
+[project]
+name = "annotated-images"
+version = "0.1.0"
+description = "Training pipelines for insect object detection from Pascal VOC annotations"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "pillow>=10.4.0",
+    "pyyaml>=6.0.2",
+    "streamlit>=1.44.0",
+    "torch>=2.4.0",
+    "torchvision>=0.19.0",
+    "tqdm>=4.66.5",
+    "ultralytics>=8.3.0",
+]
+
+[project.scripts]
+annotated-images = "annotated_images.cli:main"
+
+[build-system]
+requires = ["hatchling>=1.25.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/annotated_images"]
